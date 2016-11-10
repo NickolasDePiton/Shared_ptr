@@ -1,5 +1,4 @@
 #include <iostream>
-
 template <typename T>
 class shared_ptr
 {
