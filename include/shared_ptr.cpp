@@ -70,7 +70,8 @@ auto shared_ptr<T>::operator = (shared_ptr const& x) -> shared_ptr&
 template <typename T>
 auto shared_ptr<T>::operator = (shared_ptr&& x) -> shared_ptr&
 {
-	if (this != &x) this->swap(x);
+	if (this != &x) 
+		swap(x);
 	return *this;
 }
 
@@ -102,15 +103,19 @@ auto shared_ptr<T>::get() const -> T*
 template <typename T>
 auto shared_ptr<T>::operator ->() const -> T*
 {
-	if (ptr_ != nullptr) return ptr_;
-	else throw ("nullptr...");
+	if (ptr_ != nullptr) 
+	         return ptr_;
+	else 
+	         throw ("nullptr...");
 }
 
 template <typename T>
 auto shared_ptr<T>::operator *() const -> T&
 {
-	if (ptr_ != nullptr) return *ptr_;
-	else throw ("nullptr...");
+	if (ptr_ != nullptr) 
+		return *ptr_;
+	else 
+		throw ("nullptr...");
 }
 
 template <typename T>
